@@ -1,13 +1,99 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+html {
+  font-size: 62.5%;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  margin: 0;
+  font: 300 11px/1.4 'Helvetica Neue', sans-serif;
+  color: yellow;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: black;
+  overflow: hidden;
+  display: block;
+
+  .firefly-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    z-index: 1;
+  }
+  
+  .firefly {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #f39c12;
+    border-radius: 50%;
+    animation: flicker 3s infinite;
+  }
+  
+  @keyframes flicker {
+    0%, 100% {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+    25%, 75% {
+      opacity: 0.6;
+      transform: translate(5px, 5px);
+    }
+    50% {
+      opacity: 0.8;
+      transform: translate(-5px, -5px);
+    }
+  }
+  
+}
+
+.dashboard {
+  margin-top: 200px;
+  margin-left: 200px;
+}
+
+@media screen and (max-width: 1200px) {
+  body {
+    overflow: visible;
+  }
+}
+
+.bg-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Place the animation behind your content */
+  pointer-events: none; /* Allow clicks and interactions to pass through the animation */
+}
+
+
+.firefly-container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  z-index: 1;
+}
+
+.firefly {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #f39c12;
+  border-radius: 50%;
+  animation: flicker 3s infinite;
+}
+
+@keyframes flicker {
+  0%, 100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+  25%, 75% {
+    opacity: 0.6;
+    transform: translate(5px, 5px);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translate(-5px, -5px);
+  }
 }
